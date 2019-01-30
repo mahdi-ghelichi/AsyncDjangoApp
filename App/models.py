@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class Tasks(models.Model):
+    task_id = models.CharField(max_length=50, null=True)
+    job_name = models.CharField(max_length=50, null=True)
