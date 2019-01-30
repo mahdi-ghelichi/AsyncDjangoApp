@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container d-flex justify-content-center">
+            <div class="jumbotron text-center col-md-7">
+                         <table>
+                    <tbody>
+                    {% for job_name, state, progress, task_id in info %}
+                        <tr>
+                            <td>{{ job_name }}</td>
+                            <td style="width:100%;">
+                                <div class="progress" >
+                                    <div class="progress-bar" role="progressbar" style="width: {{ progress }}%"
+                                         aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ state }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td><a href="{% url 'App:delete_job' task_id=task_id %}"><button class="btn-warning">Delete</button></a></td>
+                            <td><a href="{% url 'App:cancel_job' task_id=task_id %}"><button class="btn-danger">Cancel</button></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            <a href="{% url 'App:run' %}"><button class="btn-dark">Back</button></a>
+            </div>
+        </div>
+    </body>
+</html>

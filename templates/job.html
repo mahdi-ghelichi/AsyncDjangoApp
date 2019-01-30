@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container d-flex justify-content-center">
+            <div class="jumbotron text-center col-md-7">
+                <p><i>{{ message }}</i></p>
+
+                <form action="{% url 'App:run' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit" class="btn-primary">Run</button>
+                </form>
+
+                <p></p>
+                <a href="{% url 'App:monitor' %}"><button class="btn-info">Monitor</button></a>
+            </div>
+        </div>
+    </body>
+</html>

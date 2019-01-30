@@ -3,9 +3,9 @@ import os
 from celery import Celery
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AsyncDjangoApp.settings')
 
-app = Celery('AsyncApp')
+app = Celery('AsyncDjangoApp')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 
-# celery -A FlexitiApp worker -l info
+# inside AsyncDjangoApp directory: celery -A AsyncDjangoApp worker -l info
 # # rabbitmq-server
