@@ -2,4 +2,3 @@
 *.xml
 *.iml
 .DS_Store
-db.sqlite3
