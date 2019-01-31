@@ -11,11 +11,11 @@ def process(self, job_name=None):
     b.save()
 
     self.update_state(state='Dispatching', meta={'progress': '33'})
-    sleep(random.randint(5, 10))
+    sleep(random.randint(5, 10))  # pre-processing the dataset in machine learning pipeline,...
 
     self.update_state(state='Running', meta={'progress': '66'})
-    sleep(random.randint(5, 10))
+    sleep(random.randint(5, 10))  # training the algorithm,...
 
     self.update_state(state='Finishing', meta={'progress': '100'})
-    sleep(random.randint(5, 10))
+    sleep(random.randint(5, 10))  # reporting metrics, saving the model,...
 
