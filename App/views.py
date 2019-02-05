@@ -32,6 +32,10 @@ def track_jobs():
         information.append([item.job_name, result.state, progress, item.task_id])
     return information
 
+@require_GET
+def monitor(request):
+    info = track_jobs()
+    return render(request, 'monitor.html', context={'info': info})
 
 @require_GET
 def cancel_job(request, task_id=None):
@@ -45,11 +49,5 @@ def cancel_job(request, task_id=None):
 def delete_job(request, task_id=None):
     a = Tasks.objects.filter(task_id=task_id)
     a.delete()
-    info = track_jobs()
-    return render(request, 'monitor.html', context={'info': info})
-
-
-@require_GET
-def monitor(request):
     info = track_jobs()
     return render(request, 'monitor.html', context={'info': info})

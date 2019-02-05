@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container d-flex justify-content-center">
@@ -21,8 +21,12 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="{% url 'App:delete_job' task_id=task_id %}"><button class="btn-warning">Delete</button></a></td>
-                            <td><a href="{% url 'App:cancel_job' task_id=task_id %}"><button class="btn-danger">Cancel</button></a></td>
+                            <td><a href="{% url 'App:delete_job' task_id=task_id %}">
+                                <button class="btn-warning">Delete</button></a>
+                            </td>
+                            <td><a href="{% url 'App:cancel_job' task_id=task_id %}">
+                                <button class="btn-danger">Cancel</button></a>
+                            </td>
                         </tr>
                     {% endfor %}
                     </tbody>

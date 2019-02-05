@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container d-flex justify-content-center">
@@ -14,7 +15,9 @@
                     {{ form.as_p }}
                 <button type="submit" class="btn-primary">Run</button>
                 </form>
-                <a href="{% url 'App:monitor' %}"><button class="btn-info">Monitor</button></a>
+                <a href="{% url 'App:monitor' %}">
+                    <button class="btn-info">Monitor</button>
+                </a>
             </div>
         </div>
     </body>
